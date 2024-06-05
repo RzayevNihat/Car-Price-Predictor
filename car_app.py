@@ -47,12 +47,14 @@ with interface:
         
         yurus=st.number_input(label='Yürüş',min_value=df['Yürüş'].min(),max_value=df['Yürüş'].max())
         
-        reng=st.selectbox(label='Rəng',options=df['Rəng'].str.capitalize().sort_values().unique().tolist())
+        
         
     with model:
         model = st.selectbox(label = 'Model', options =df[df['Marka'].str.capitalize() == marka]['Model'].str.capitalize().sort_values().unique().tolist())  
         
         at_gucu=st.number_input(label='At gücü',min_value=df['At gücü'].min(),max_value=df['At gücü'].max())
+
+	reng=st.selectbox(label='Rəng',options=df['Rəng'].str.capitalize().sort_values().unique().tolist())
     with y_novu:
         y_novu=st.selectbox(label='Yanacaq növü',options=df['Yanacaq növü'].sort_values().unique().tolist())
         
